@@ -1,0 +1,77 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.digiex</groupId>
+    <artifactId>FeaturePack</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>FeaturePack</name>
+    <url>https://github.com/xzKinGzxBuRnzx/FeaturePack</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+  
+    <repositories>
+        <repository>
+            <id>bukkit-repo</id>
+            <url>http://artifactory.xzkingzxburnzx.tk/repo/</url>
+        </repository>
+    </repositories>
+  
+    <dependencies>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>craftbukkit</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.getspout</groupId>
+            <artifactId>spoutapi</artifactId>
+            <version>dev-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>Essentials</groupId>
+            <artifactId>Essentials</artifactId>
+            <version>2.5.6</version>
+        </dependency>
+        <dependency>
+            <groupId>BOSEconomy7</groupId>
+            <artifactId>BOSEconomy7</artifactId>
+            <version>7</version>
+        </dependency>
+        <dependency>
+            <groupId>EssentialsGroupManager</groupId>
+            <artifactId>EssentialsGroupManager</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>MultiCurrency</groupId>
+            <artifactId>MultiCurrency</artifactId>
+            <version>0.09</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nijikokun.bukkit</groupId>
+            <artifactId>Permissions</artifactId>
+            <version>3.1.6</version>
+        </dependency>
+        <dependency>
+            <groupId>iConomy</groupId>
+            <artifactId>iConomy4</artifactId>
+            <version>4</version>
+        </dependency>
+        <dependency>
+            <groupId>iConomy</groupId>
+            <artifactId>iConomy5</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>iConomy</groupId>
+            <artifactId>iConomy6</artifactId>
+            <version>6</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="BOSEconomy7.jar"/>
-	<classpathentry exported="true" kind="lib" path="craftbukkit-0.0.1-SNAPSHOT.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="http://jd.bukkit.org/apidocs/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="Essentials.jar"/>
-	<classpathentry exported="true" kind="lib" path="EssentialsGroupManager.jar"/>
-	<classpathentry exported="true" kind="lib" path="iConomy4.jar"/>
-	<classpathentry exported="true" kind="lib" path="iConomy5.jar"/>
-	<classpathentry exported="true" kind="lib" path="MultiCurrency07.jar"/>
-	<classpathentry exported="true" kind="lib" path="iConomy6.jar"/>
-	<classpathentry exported="true" kind="lib" path="Permissions.jar"/>
-	<classpathentry exported="true" kind="lib" path="SpoutAPI.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="http://getspout.org/jd/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>
