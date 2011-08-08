@@ -1,0 +1,138 @@
+name: FeaturePack
+main: net.digiex.FeaturePack.FeaturePack
+version: 2.7.2
+author: xzKinGzxBuRnzx
+website: http://digiex.net/minecraft/
+description: Per Player Time, Time and Weather Voting & Control, Tips and More!
+commands:
+    fp:
+        description: FeaturePack
+        usage: |
+        Example: /<command> help - Shows other available command's.
+permissions:
+    featurepack.help:
+        description: FeaturePack Help
+        default: true
+    featurepack.time:
+        description: Is used to start votes for time
+        default: false
+    featurepack.time.bypass:
+        description: Is used to bypass the cool down stage of time votes
+        default: false
+    featurepack.weather:
+        description: Is used to start votes for weather
+        default: false
+    featurepack.weather.bypass:
+        description: Is used to bypass the cool down stage of weather votes
+        default: false
+    featurepack.kill:
+        description: Is used to start votes for kill
+        default: false
+    featurepack.kill.bypass:
+        description: Is used to bypass the cool down stage for kill votes
+        default: false
+    featurepack.vote:
+        description: Is used to vote for time, weather and kill votes in progress
+        default: false
+    featurepack.time.vote:
+        description: Is used to vote for time votes
+        default: false
+    featurepack.weather.vote:
+        description: Is used to vote for weather votes
+        default: false
+    featurepack.kill.vote:
+        description: Is used to vote for kill votes
+        default: false
+    featurepack.lock:
+        description: Is used to lock time or weather
+        default: false
+    featurepack.unlock:
+        description: Is used to unlock time or weather
+        default: false
+    featurepack.god:
+        description: Is used to make yourself a god or others
+        default: false
+    featurepack.ungod:
+        description: Is used to remove god from yourself or others
+        default: false
+    featurepack.biome:
+        description: Is used to tell a player what biome there currently in
+        default: false
+    featurepack.ipv6:
+        description: Is used to tell a player if they have ipv6
+        default: false
+    featurepack.ipv6.automated:
+        description: Is used to determine if a player was given ipv6, do not manually touch this, featurepack will handle it
+        default: false
+    featurepack.lotto:
+        description: Is used to play the lottery
+        default: false
+    featurepack.lotto.code:
+        description: Is used to display the lotto code
+        default: false
+    featurepack.mytime:
+        description: Is used to set a players time
+        default: false
+    featurepack.day:
+        description: Is used to set time to day
+        default: false
+    featurepack.night:
+        description: Is used to set time to day
+        default: false
+    featurepack.dawn:
+        description: Is used to set time to dawn
+        default: false
+    featurepack.dusk:
+        description: Is used to set time to dusk
+        default: false
+    featurepack.sun:
+        description: Is used to set weather to sun
+        default: false
+    featurepack.rain:
+        description: Is used to set weather to rain
+        default: false
+    featurepack.thunder:
+        description: Is used to set weather to thunder
+        default: false
+    featurepack.light:
+        description: Is used to strike a player with lightning
+        default: false
+    featurepack.seed:
+        description: Is used to get a seed of a world
+        default: false
+    featurepack.bed:
+        description: Is used to start a vote for day by using a bed
+        default: false
+    featurepack.wand.lightning:
+        description: Is used to strike lightning where ever a player is looking at
+        default: false
+    featurepack.wand.vote:
+        description: Is used to vote for time, weather and kill votes in progress
+        default: false
+    featurepack.sign:
+        description: Is used to do sign based commands
+        default: false
+    featurepack.vote.cancel:
+        description: Is used to cancel time, weather and kill votes in progress
+        default: false
+    featurepack.info:
+        description: Is used to display server information
+        default: false
+    featurepack.regen:
+        description: Is used to regerate you're world
+        default: false
+    featurepack.secure:
+        description: Is used to secure a players account, based on IP
+        default: false
+    featurepack.wand.fireball:
+        description: Is used to send fireballs
+        default: false
+    featurepack.version:
+        description: Is used to dislay the featurepack version
+        default: false
+    featurepack.reload:
+        description: Is used to reload featurepack
+        default: false
+    featurepack.*:
+        description: Gives access to all of FeaturePack commands
+        default: op
