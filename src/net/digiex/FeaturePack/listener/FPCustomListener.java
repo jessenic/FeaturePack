@@ -26,6 +26,7 @@ public class FPCustomListener extends InputListener {
 		this.parent = parent;
 	}
 
+        @Override
 	public void onKeyPressedEvent(KeyPressedEvent event) {
 		SpoutPlayer player = event.getPlayer();
 		if (event.getKey().equals(Keyboard.KEY_Y)) {

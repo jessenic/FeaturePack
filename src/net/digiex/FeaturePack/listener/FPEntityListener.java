@@ -33,6 +33,7 @@ import org.bukkit.entity.Weather;
 import org.bukkit.entity.Wolf;
 import org.bukkit.entity.Zombie;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageByBlockEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.EntityDeathEvent;
@@ -109,8 +110,19 @@ public class FPEntityListener extends EntityListener {
 	}
 
 	public String replaceCause(EntityDamageEvent e) {
+		String cause = null;
 		if (e instanceof EntityDamageByEntityEvent) {
-			return getMob(((EntityDamageByEntityEvent) e).getDamager());
+			if (((EntityDamageByEntityEvent) e).getDamager() != null) {
+				cause = getMob(((EntityDamageByEntityEvent) e).getDamager());
+			}
+		} else if (e instanceof EntityDamageByBlockEvent) {
+			if (((EntityDamageByBlockEvent) e).getDamager() != null) {
+				cause = ((EntityDamageByBlockEvent) e).getDamager().getType()
+						.toString().toLowerCase().replace("_", " ");
+			}
+		}
+		if (cause != null) {
+			return cause;
 		} else {
 			switch (e.getCause()) {
 			case BLOCK_EXPLOSION:

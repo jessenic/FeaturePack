@@ -25,8 +25,7 @@ public class VoteCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command command,
 			String commandLabel, String[] args) {
 		Player player = (Player) sender;
-		if (FPPermissions.has(player, "featurepack.vote")) { // isn't really
-																// needed
+		if (FPPermissions.has(player, "featurepack.vote")) {
 			if (args.length == 3) {
 				if (args[1].equals("yes")) {
 					if (args[1].equalsIgnoreCase("?")) {

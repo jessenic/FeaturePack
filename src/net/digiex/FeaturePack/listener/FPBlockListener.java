@@ -17,6 +17,7 @@ public class FPBlockListener extends BlockListener {
 		this.parent = parent;
 	}
 
+        @Override
 	public void onBlockBreak(BlockBreakEvent event) {
 		Player player = event.getPlayer();
 		if (FPSettings.Secure) {
@@ -26,6 +27,7 @@ public class FPBlockListener extends BlockListener {
 		}
 	}
 
+        @Override
 	public void onBlockPlace(BlockPlaceEvent event) {
 		Player player = event.getPlayer();
 		if (FPSettings.Secure) {
