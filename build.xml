@@ -31,9 +31,6 @@
             </fileset>
         </copy>
     </target>
-    <target name="clean">
-        <delete dir="bin"/>
-    </target>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
@@ -47,5 +44,8 @@
                 <include name="**/*"/>
             </fileset>
         </jar>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
     </target>
 </project>
