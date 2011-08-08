@@ -31,7 +31,7 @@
             </fileset>
         </copy>
     </target>
-    <target depends="init" name="build-project">
+    <target depends="init" name="build">
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
             <src path="src"/>
