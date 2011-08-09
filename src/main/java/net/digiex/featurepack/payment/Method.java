@@ -10,6 +10,7 @@ import org.bukkit.plugin.Plugin;
  * @license AOL license <http://aol.nexua.org>
  */
 public interface Method {
+
     /**
      * Encodes the Plugin into an Object disguised as the Plugin.
      * If you want the original Plugin Class you must cast it to the correct
@@ -38,7 +39,6 @@ public interface Method {
      * @return <code>String</code> Plugin version.
      */
     public String getVersion();
-
 
     /**
      * Formats amounts into this payment methods style of currency display.
@@ -89,7 +89,6 @@ public interface Method {
      */
     public MethodAccount getAccount(String name);
 
-
     /**
      * Returns a <code>MethodBankAccount</code> class for an account <code>name</code>.
      *
@@ -119,16 +118,27 @@ public interface Method {
      * Contains Calculator and Balance functions for Accounts.
      */
     public interface MethodAccount {
+
         public double balance();
+
         public boolean set(double amount);
+
         public boolean add(double amount);
+
         public boolean subtract(double amount);
+
         public boolean multiply(double amount);
+
         public boolean divide(double amount);
+
         public boolean hasEnough(double amount);
+
         public boolean hasOver(double amount);
+
         public boolean hasUnder(double amount);
+
         public boolean isNegative();
+
         public boolean remove();
 
         @Override
@@ -139,18 +149,31 @@ public interface Method {
      * Contains Calculator and Balance functions for Bank Accounts.
      */
     public interface MethodBankAccount {
+
         public double balance();
+
         public String getBankName();
+
         public int getBankId();
+
         public boolean set(double amount);
+
         public boolean add(double amount);
+
         public boolean subtract(double amount);
+
         public boolean multiply(double amount);
+
         public boolean divide(double amount);
+
         public boolean hasEnough(double amount);
+
         public boolean hasOver(double amount);
+
         public boolean hasUnder(double amount);
+
         public boolean isNegative();
+
         public boolean remove();
 
         @Override

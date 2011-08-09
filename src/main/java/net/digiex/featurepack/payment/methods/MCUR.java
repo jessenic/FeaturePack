@@ -15,6 +15,7 @@ import org.bukkit.plugin.Plugin;
  * @license AOL license <http://aol.nexua.org>
  */
 public class MCUR implements Method {
+
     private Currency currencyList;
 
     public Object getPlugin() {
@@ -65,7 +66,8 @@ public class MCUR implements Method {
         currencyList = (Currency) plugin;
     }
 
-    public class MCurrencyAccount implements MethodAccount{
+    public class MCurrencyAccount implements MethodAccount {
+
         private String name;
 
         public MCurrencyAccount(String name) {

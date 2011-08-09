@@ -18,6 +18,7 @@ import org.bukkit.plugin.Plugin;
  * @license AOL license <http://aol.nexua.org>
  */
 public class iCo5 implements Method {
+
     private iConomy iConomy;
 
     public iConomy getPlugin() {
@@ -65,10 +66,11 @@ public class iCo5 implements Method {
     }
 
     public void setPlugin(Plugin plugin) {
-        iConomy = (iConomy)plugin;
+        iConomy = (iConomy) plugin;
     }
 
     public class iCoAccount implements MethodAccount {
+
         private Account account;
         private Holdings holdings;
 
@@ -86,31 +88,41 @@ public class iCo5 implements Method {
         }
 
         public boolean set(double amount) {
-            if(this.holdings == null) return false;
+            if (this.holdings == null) {
+                return false;
+            }
             this.holdings.set(amount);
             return true;
         }
 
         public boolean add(double amount) {
-            if(this.holdings == null) return false;
+            if (this.holdings == null) {
+                return false;
+            }
             this.holdings.add(amount);
             return true;
         }
 
         public boolean subtract(double amount) {
-            if(this.holdings == null) return false;
+            if (this.holdings == null) {
+                return false;
+            }
             this.holdings.subtract(amount);
             return true;
         }
 
         public boolean multiply(double amount) {
-            if(this.holdings == null) return false;
+            if (this.holdings == null) {
+                return false;
+            }
             this.holdings.multiply(amount);
             return true;
         }
 
         public boolean divide(double amount) {
-            if(this.holdings == null) return false;
+            if (this.holdings == null) {
+                return false;
+            }
             this.holdings.divide(amount);
             return true;
         }
@@ -132,13 +144,16 @@ public class iCo5 implements Method {
         }
 
         public boolean remove() {
-            if(this.account == null) return false;
+            if (this.account == null) {
+                return false;
+            }
             this.account.remove();
             return true;
         }
     }
 
     public class iCoBankAccount implements MethodBankAccount {
+
         private BankAccount account;
         private Holdings holdings;
 
@@ -164,31 +179,41 @@ public class iCo5 implements Method {
         }
 
         public boolean set(double amount) {
-            if(this.holdings == null) return false;
+            if (this.holdings == null) {
+                return false;
+            }
             this.holdings.set(amount);
             return true;
         }
 
         public boolean add(double amount) {
-            if(this.holdings == null) return false;
+            if (this.holdings == null) {
+                return false;
+            }
             this.holdings.add(amount);
             return true;
         }
 
         public boolean subtract(double amount) {
-            if(this.holdings == null) return false;
+            if (this.holdings == null) {
+                return false;
+            }
             this.holdings.subtract(amount);
             return true;
         }
 
         public boolean multiply(double amount) {
-            if(this.holdings == null) return false;
+            if (this.holdings == null) {
+                return false;
+            }
             this.holdings.multiply(amount);
             return true;
         }
 
         public boolean divide(double amount) {
-            if(this.holdings == null) return false;
+            if (this.holdings == null) {
+                return false;
+            }
             this.holdings.divide(amount);
             return true;
         }
@@ -210,7 +235,9 @@ public class iCo5 implements Method {
         }
 
         public boolean remove() {
-            if(this.account == null) return false;
+            if (this.account == null) {
+                return false;
+            }
             this.account.remove();
             return true;
         }

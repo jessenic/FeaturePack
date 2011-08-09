@@ -28,6 +28,7 @@ import org.bukkit.plugin.PluginManager;
  * @license: AOL license <http://aol.nexua.org>
  */
 public class Methods {
+
     private boolean self = false;
     private Method Method = null;
     private String preferred = "";
@@ -51,7 +52,7 @@ public class Methods {
     public Methods(String preferred) {
         this._init();
 
-        if(this.Dependencies.contains(preferred)) {
+        if (this.Dependencies.contains(preferred)) {
             this.preferred = preferred;
         }
     }
@@ -91,7 +92,7 @@ public class Methods {
      * @return Method <em>or</em> Null
      */
     public Method createMethod(Plugin plugin) {
-        for (Method method: Methods) {
+        for (Method method : Methods) {
             if (method.isCompatible(plugin)) {
                 method.setPlugin(plugin);
                 return method;
@@ -125,47 +126,67 @@ public class Methods {
      * @return <code>boolean</code> True on success, False on failure.
      */
     public boolean setMethod(Plugin method) {
-        if(hasMethod()) return true;
-        if(self) { self = false; return false; }
+        if (hasMethod()) {
+            return true;
+        }
+        if (self) {
+            self = false;
+            return false;
+        }
 
         int count = 0;
         boolean match = false;
         Plugin plugin = null;
         PluginManager manager = method.getServer().getPluginManager();
 
-        for(String name: this.getDependencies()) {
-            if(hasMethod()) break;
-            if(method.getDescription().getName().equals(name)) plugin = method; else  plugin = manager.getPlugin(name);
-            if(plugin == null) continue;
+        for (String name : this.getDependencies()) {
+            if (hasMethod()) {
+                break;
+            }
+            if (method.getDescription().getName().equals(name)) {
+                plugin = method;
+            } else {
+                plugin = manager.getPlugin(name);
+            }
+            if (plugin == null) {
+                continue;
+            }
 
             Method current = this.createMethod(plugin);
-            if(current == null) continue;
+            if (current == null) {
+                continue;
+            }
 
-            if(this.preferred.isEmpty())
+            if (this.preferred.isEmpty()) {
                 this.Method = current;
-            else {
+            } else {
                 this.Attachables.add(current);
             }
         }
 
-        if(!this.preferred.isEmpty()) {
+        if (!this.preferred.isEmpty()) {
             do {
-                if(hasMethod()) {
+                if (hasMethod()) {
                     match = true;
                 } else {
-                    for(Method attached: this.Attachables) {
-                        if(attached == null) continue;
+                    for (Method attached : this.Attachables) {
+                        if (attached == null) {
+                            continue;
+                        }
 
-                        if(hasMethod()) {
+                        if (hasMethod()) {
                             match = true;
                             break;
                         }
 
-                        if(this.preferred.isEmpty()) this.Method = attached;
+                        if (this.preferred.isEmpty()) {
+                            this.Method = attached;
+                        }
 
-                        if(count == 0) {
-                            if(this.preferred.equalsIgnoreCase(attached.getName()))
+                        if (count == 0) {
+                            if (this.preferred.equalsIgnoreCase(attached.getName())) {
                                 this.Method = attached;
+                            }
                         } else {
                             this.Method = attached;
                         }
@@ -173,7 +194,7 @@ public class Methods {
 
                     count++;
                 }
-            } while(!match);
+            } while (!match);
         }
 
         return hasMethod();
@@ -196,8 +217,12 @@ public class Methods {
      * @return <code>boolean</code>
      */
     public boolean checkDisabled(Plugin method) {
-        if(!hasMethod()) return true;
-        if (Method.isCompatible(method)) Method = null;
+        if (!hasMethod()) {
+            return true;
+        }
+        if (Method.isCompatible(method)) {
+            Method = null;
+        }
         return (Method == null);
     }
 }

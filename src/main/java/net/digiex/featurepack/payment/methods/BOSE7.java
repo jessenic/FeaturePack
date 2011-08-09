@@ -14,6 +14,7 @@ import org.bukkit.plugin.Plugin;
  * @license AOL license <http://aol.nexua.org>
  */
 public class BOSE7 implements Method {
+
     private BOSEconomy BOSEconomy;
 
     public BOSEconomy getPlugin() {
@@ -30,7 +31,9 @@ public class BOSE7 implements Method {
 
     public String format(double amount) {
         String currency = this.BOSEconomy.getMoneyNamePlural();
-        if(amount == 1) currency = this.BOSEconomy.getMoneyName();
+        if (amount == 1) {
+            currency = this.BOSEconomy.getMoneyName();
+        }
         return amount + " " + currency;
     }
 
@@ -51,12 +54,16 @@ public class BOSE7 implements Method {
     }
 
     public MethodAccount getAccount(String name) {
-        if(!hasAccount(name)) return null;
+        if (!hasAccount(name)) {
+            return null;
+        }
         return new BOSEAccount(name, this.BOSEconomy);
     }
 
     public MethodBankAccount getBankAccount(String bank, String name) {
-        if(!hasBankAccount(bank, name)) return null;
+        if (!hasBankAccount(bank, name)) {
+            return null;
+        }
         return new BOSEBankAccount(bank, BOSEconomy);
     }
 
@@ -65,10 +72,11 @@ public class BOSE7 implements Method {
     }
 
     public void setPlugin(Plugin plugin) {
-        BOSEconomy = (BOSEconomy)plugin;
+        BOSEconomy = (BOSEconomy) plugin;
     }
 
     public class BOSEAccount implements MethodAccount {
+
         private String name;
         private BOSEconomy BOSEconomy;
 
@@ -126,6 +134,7 @@ public class BOSE7 implements Method {
     }
 
     public class BOSEBankAccount implements MethodBankAccount {
+
         private String bank;
         private BOSEconomy BOSEconomy;
 

@@ -10,30 +10,31 @@ import net.digiex.featurepack.FeaturePack;
 import net.digiex.featurepack.command.SecureCommand;
 
 public class FPBlockListener extends BlockListener {
-	@SuppressWarnings("unused")
-	private FeaturePack parent;
 
-	public FPBlockListener(FeaturePack parent) {
-		this.parent = parent;
-	}
+    @SuppressWarnings("unused")
+    private FeaturePack parent;
 
-        @Override
-	public void onBlockBreak(BlockBreakEvent event) {
-		Player player = event.getPlayer();
-		if (FPSettings.Secure) {
-			if (SecureCommand.Secure.containsKey(player)) {
-				event.setCancelled(true);
-			}
-		}
-	}
+    public FPBlockListener(FeaturePack parent) {
+        this.parent = parent;
+    }
 
-        @Override
-	public void onBlockPlace(BlockPlaceEvent event) {
-		Player player = event.getPlayer();
-		if (FPSettings.Secure) {
-			if (SecureCommand.Secure.containsKey(player)) {
-				event.setCancelled(true);
-			}
-		}
-	}
+    @Override
+    public void onBlockBreak(BlockBreakEvent event) {
+        Player player = event.getPlayer();
+        if (FPSettings.Secure) {
+            if (SecureCommand.Secure.containsKey(player)) {
+                event.setCancelled(true);
+            }
+        }
+    }
+
+    @Override
+    public void onBlockPlace(BlockPlaceEvent event) {
+        Player player = event.getPlayer();
+        if (FPSettings.Secure) {
+            if (SecureCommand.Secure.containsKey(player)) {
+                event.setCancelled(true);
+            }
+        }
+    }
 }

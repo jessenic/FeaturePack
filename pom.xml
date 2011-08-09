@@ -74,4 +74,15 @@
             <version>6</version>
         </dependency>
     </dependencies>
+    
+    <build>
+        <resources>
+            <resource>
+                <directory> Resources </directory>
+                <includes>
+                    <include> **/*.yml </include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 </project>

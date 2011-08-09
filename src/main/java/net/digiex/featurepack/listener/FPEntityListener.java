@@ -45,175 +45,172 @@ import net.digiex.featurepack.FeaturePack;
 import net.digiex.featurepack.command.GodCommand;
 
 public class FPEntityListener extends EntityListener {
-	private FeaturePack parent;
 
-	public FPEntityListener(FeaturePack parent) {
-		this.parent = parent;
-	}
+    private FeaturePack parent;
 
-	@Override
-	public void onEntityDamage(EntityDamageEvent event) {
-		if (event.getEntity() instanceof Player) {
-			CraftPlayer player = (CraftPlayer) event.getEntity();
-			if (GodCommand.Gods.containsKey(player.getEntityId())
-					|| GodCommand.tempGods.containsKey(player.getEntityId())) {
-				event.setCancelled(true);
-				player.getHandle().fireTicks = 0;
-				player.setRemainingAir(player.getMaximumAir());
-			}
-			if (FPSettings.TeleportEnabled) {
-				if (event.getCause().equals(DamageCause.VOID)) {
-					double x = player.getLocation().getX();
-					double y = 200;
-					double z = player.getLocation().getZ();
-					float yaw = player.getLocation().getYaw();
-					float pitch = player.getLocation().getPitch();
-					Iterator<World> w = parent.getServer().getWorlds()
-							.iterator();
-					while (w.hasNext()) {
-						World world = w.next();
-						if (world.getName().equalsIgnoreCase(
-								FPSettings.teleworld)) {
-							event.setCancelled(true);
-							Location l = new Location(world, x, y, z, yaw,
-									pitch);
-							player.teleport(l);
-						}
-					}
-				}
-			}
-		}
-	}
+    public FPEntityListener(FeaturePack parent) {
+        this.parent = parent;
+    }
 
-	@Override
-	public void onEntityDeath(EntityDeathEvent event) {
-		if (event.getEntity() instanceof Player) {
-			if (FPSettings.DeathEnabled) {
-				CraftPlayer player = (CraftPlayer) event.getEntity();
-				parent.getServer().broadcastMessage(
-						FPSettings.deathmessage.replace("@p", player.getName())
-								.replace(
-										"@r",
-										replaceCause(player
-												.getLastDamageCause())));
-				FeaturePack.log.info("R.I.P. " + player.getName());
-				ItemStack stack = new ItemStack(260, 1);
-				if (player.isOp()) {
-					stack = new ItemStack(FPSettings.DropOnOPKill, 1);
-				} else {
-					stack = new ItemStack(FPSettings.DropOnKill, 1);
-				}
-				player.getWorld().dropItemNaturally(
-						event.getEntity().getLocation(), stack);
-			}
-		}
-	}
+    @Override
+    public void onEntityDamage(EntityDamageEvent event) {
+        if (event.getEntity() instanceof Player) {
+            CraftPlayer player = (CraftPlayer) event.getEntity();
+            if (GodCommand.Gods.containsKey(player.getEntityId())
+                    || GodCommand.tempGods.containsKey(player.getEntityId())) {
+                event.setCancelled(true);
+                player.getHandle().fireTicks = 0;
+                player.setRemainingAir(player.getMaximumAir());
+            }
+            if (FPSettings.TeleportEnabled) {
+                if (event.getCause().equals(DamageCause.VOID)) {
+                    double x = player.getLocation().getX();
+                    double y = 200;
+                    double z = player.getLocation().getZ();
+                    float yaw = player.getLocation().getYaw();
+                    float pitch = player.getLocation().getPitch();
+                    Iterator<World> w = parent.getServer().getWorlds().iterator();
+                    while (w.hasNext()) {
+                        World world = w.next();
+                        if (world.getName().equalsIgnoreCase(
+                                FPSettings.teleworld)) {
+                            event.setCancelled(true);
+                            Location l = new Location(world, x, y, z, yaw,
+                                    pitch);
+                            player.teleport(l);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-	public String replaceCause(EntityDamageEvent e) {
-		String cause = null;
-		if (e instanceof EntityDamageByEntityEvent) {
-			if (((EntityDamageByEntityEvent) e).getDamager() != null) {
-				cause = getMob(((EntityDamageByEntityEvent) e).getDamager());
-			}
-		} else if (e instanceof EntityDamageByBlockEvent) {
-			if (((EntityDamageByBlockEvent) e).getDamager() != null) {
-				cause = ((EntityDamageByBlockEvent) e).getDamager().getType()
-						.toString().toLowerCase().replace("_", " ");
-			}
-		}
-		if (cause != null) {
-			return cause;
-		} else {
-			switch (e.getCause()) {
-			case BLOCK_EXPLOSION:
-				return "block explosion";
-			case CONTACT:
-				return "block contact";
-			case CUSTOM:
-				return "Unknown";
-			case DROWNING:
-				return "drowning";
-			case ENTITY_ATTACK:
-				return "a mob or person";
-			case ENTITY_EXPLOSION:
-				return "creeper";
-			case FALL:
-				return "falling";
-			case FIRE:
-				return "fire";
-			case FIRE_TICK:
-				return "fire";
-			case LAVA:
-				return "lava";
-			case LIGHTNING:
-				return "lightning";
-			case PROJECTILE:
-				return "some sort of a projectile";
-			case SUFFOCATION:
-				return "not having enough air";
-			case VOID:
-				return "falling into the void";
-			default:
-				return "Unknown";
-			}
-		}
-	}
+    @Override
+    public void onEntityDeath(EntityDeathEvent event) {
+        if (event.getEntity() instanceof Player) {
+            if (FPSettings.DeathEnabled) {
+                CraftPlayer player = (CraftPlayer) event.getEntity();
+                parent.getServer().broadcastMessage(
+                        FPSettings.deathmessage.replace("@p", player.getName()).replace(
+                        "@r",
+                        replaceCause(player.getLastDamageCause())));
+                FeaturePack.log.info("R.I.P. " + player.getName());
+                ItemStack stack = new ItemStack(260, 1);
+                if (player.isOp()) {
+                    stack = new ItemStack(FPSettings.DropOnOPKill, 1);
+                } else {
+                    stack = new ItemStack(FPSettings.DropOnKill, 1);
+                }
+                player.getWorld().dropItemNaturally(
+                        event.getEntity().getLocation(), stack);
+            }
+        }
+    }
 
-	public String getMob(Entity e) {
-		if (e instanceof Player) {
-			return ((Player) e).getDisplayName();
-		} else if (e instanceof Arrow) {
-			return "Arrow";
-		} else if (e instanceof Creeper) {
-			return "Creeper";
-		} else if (e instanceof Egg) {
-			return "Egg";
-		} else if (e instanceof FallingSand) {
-			return "Falling Sand";
-		} else if (e instanceof Fireball) {
-			return "Ghast Fireball";
-		} else if (e instanceof Ghast) {
-			return "Ghast";
-		} else if (e instanceof Giant) {
-			return "Giant";
-		} else if (e instanceof HumanEntity) {
-			return ((HumanEntity) e).getName();
-		} else if (e instanceof LightningStrike) {
-			return "Lightning Strike";
-		} else if (e instanceof PigZombie) {
-			return "Pig Zombie";
-		} else if (e instanceof Skeleton) {
-			return "Skeleton";
-		} else if (e instanceof Slime) {
-			return "Slime";
-		} else if (e instanceof Snowball) {
-			return "Snowball";
-		} else if (e instanceof Spider) {
-			return "Spider";
-		} else if (e instanceof Wolf) {
-			return "Wolf";
-		} else if (e instanceof Zombie) {
-			return "Zombie";
-		} else if (e instanceof Chicken) {
-			return "Chicken";
-		} else if (e instanceof Cow) {
-			return "Cow";
-		} else if (e instanceof Fish) {
-			return "Fish";
-		} else if (e instanceof Pig) {
-			return "Pig";
-		} else if (e instanceof Sheep) {
-			return "Sheep";
-		} else if (e instanceof Squid) {
-			return "Squid";
-		} else if (e instanceof Weather) {
-			return "Weather!!?";
-		} else if (e instanceof Monster) {
-			return "Monster";
-		} else if (e instanceof Explosive) {
-			return "Explosives";
-		} else {
-			return "a mob or person";
-		}
-	}
+    public String replaceCause(EntityDamageEvent e) {
+        String cause = null;
+        if (e instanceof EntityDamageByEntityEvent) {
+            if (((EntityDamageByEntityEvent) e).getDamager() != null) {
+                cause = getMob(((EntityDamageByEntityEvent) e).getDamager());
+            }
+        } else if (e instanceof EntityDamageByBlockEvent) {
+            if (((EntityDamageByBlockEvent) e).getDamager() != null) {
+                cause = ((EntityDamageByBlockEvent) e).getDamager().getType().toString().toLowerCase().replace("_", " ");
+            }
+        }
+        if (cause != null) {
+            return cause;
+        } else {
+            switch (e.getCause()) {
+                case BLOCK_EXPLOSION:
+                    return "block explosion";
+                case CONTACT:
+                    return "block contact";
+                case CUSTOM:
+                    return "Unknown";
+                case DROWNING:
+                    return "drowning";
+                case ENTITY_ATTACK:
+                    return "a mob or person";
+                case ENTITY_EXPLOSION:
+                    return "creeper";
+                case FALL:
+                    return "falling";
+                case FIRE:
+                    return "fire";
+                case FIRE_TICK:
+                    return "fire";
+                case LAVA:
+                    return "lava";
+                case LIGHTNING:
+                    return "lightning";
+                case PROJECTILE:
+                    return "some sort of a projectile";
+                case SUFFOCATION:
+                    return "not having enough air";
+                case VOID:
+                    return "falling into the void";
+                default:
+                    return "Unknown";
+            }
+        }
+    }
+
+    public String getMob(Entity e) {
+        if (e instanceof Player) {
+            return ((Player) e).getDisplayName();
+        } else if (e instanceof Arrow) {
+            return "Arrow";
+        } else if (e instanceof Creeper) {
+            return "Creeper";
+        } else if (e instanceof Egg) {
+            return "Egg";
+        } else if (e instanceof FallingSand) {
+            return "Falling Sand";
+        } else if (e instanceof Fireball) {
+            return "Ghast Fireball";
+        } else if (e instanceof Ghast) {
+            return "Ghast";
+        } else if (e instanceof Giant) {
+            return "Giant";
+        } else if (e instanceof HumanEntity) {
+            return ((HumanEntity) e).getName();
+        } else if (e instanceof LightningStrike) {
+            return "Lightning Strike";
+        } else if (e instanceof PigZombie) {
+            return "Pig Zombie";
+        } else if (e instanceof Skeleton) {
+            return "Skeleton";
+        } else if (e instanceof Slime) {
+            return "Slime";
+        } else if (e instanceof Snowball) {
+            return "Snowball";
+        } else if (e instanceof Spider) {
+            return "Spider";
+        } else if (e instanceof Wolf) {
+            return "Wolf";
+        } else if (e instanceof Zombie) {
+            return "Zombie";
+        } else if (e instanceof Chicken) {
+            return "Chicken";
+        } else if (e instanceof Cow) {
+            return "Cow";
+        } else if (e instanceof Fish) {
+            return "Fish";
+        } else if (e instanceof Pig) {
+            return "Pig";
+        } else if (e instanceof Sheep) {
+            return "Sheep";
+        } else if (e instanceof Squid) {
+            return "Squid";
+        } else if (e instanceof Weather) {
+            return "Weather!!?";
+        } else if (e instanceof Monster) {
+            return "Monster";
+        } else if (e instanceof Explosive) {
+            return "Explosives";
+        } else {
+            return "a mob or person";
+        }
+    }
 }
