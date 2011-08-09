@@ -1,6 +1,6 @@
-package net.digiex.FeaturePack.payment.methods;
+package net.digiex.featurepack.payment.methods;
 
-import net.digiex.FeaturePack.payment.Method;
+import net.digiex.featurepack.payment.Method;
 
 import cosine.boseconomy.BOSEconomy;
 import org.bukkit.plugin.Plugin;

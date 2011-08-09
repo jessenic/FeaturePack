@@ -1,15 +1,15 @@
-package net.digiex.FeaturePack;
+package net.digiex.featurepack;
 
 import java.util.HashMap;
 
 import org.bukkit.event.Event;
 import org.bukkit.event.Listener;
 
-import net.digiex.FeaturePack.listener.FPBlockListener;
-import net.digiex.FeaturePack.listener.FPCustomListener;
-import net.digiex.FeaturePack.listener.FPEntityListener;
-import net.digiex.FeaturePack.listener.FPPlayerListener;
-import net.digiex.FeaturePack.listener.FPWorldListener;
+import net.digiex.featurepack.listener.FPBlockListener;
+import net.digiex.featurepack.listener.FPCustomListener;
+import net.digiex.featurepack.listener.FPEntityListener;
+import net.digiex.featurepack.listener.FPPlayerListener;
+import net.digiex.featurepack.listener.FPWorldListener;
 
 public class FPListeners {
 	private FeaturePack parent;

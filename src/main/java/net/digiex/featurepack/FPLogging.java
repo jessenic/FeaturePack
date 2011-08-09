@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack;
+package net.digiex.featurepack;
 
 import java.util.logging.Filter;
 import java.util.logging.Level;

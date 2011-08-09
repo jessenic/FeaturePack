@@ -1,11 +1,11 @@
-package net.digiex.FeaturePack.payment.methods;
+package net.digiex.featurepack.payment.methods;
 
 import com.iCo6.iConomy;
 import com.iCo6.system.Account;
 import com.iCo6.system.Accounts;
 import com.iCo6.system.Holdings;
 
-import net.digiex.FeaturePack.payment.Method;
+import net.digiex.featurepack.payment.Method;
 
 import org.bukkit.plugin.Plugin;
 

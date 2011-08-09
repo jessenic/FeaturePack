@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack;
+package net.digiex.featurepack;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

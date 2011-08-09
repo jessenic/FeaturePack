@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.task;
+package net.digiex.featurepack.task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +12,11 @@ import org.bukkit.entity.Monster;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Wolf;
 
-import net.digiex.FeaturePack.FPSettings;
-import net.digiex.FeaturePack.FPSpout;
-import net.digiex.FeaturePack.FeaturePack;
-import net.digiex.FeaturePack.command.KillVoteCommand;
-import net.digiex.FeaturePack.payment.Method.MethodAccount;
+import net.digiex.featurepack.FPSettings;
+import net.digiex.featurepack.FPSpout;
+import net.digiex.featurepack.FeaturePack;
+import net.digiex.featurepack.command.KillVoteCommand;
+import net.digiex.featurepack.payment.Method.MethodAccount;
 
 public class KillVoteTask implements Runnable {
 	private FeaturePack parent;

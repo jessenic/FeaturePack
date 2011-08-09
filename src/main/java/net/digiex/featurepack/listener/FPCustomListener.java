@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.listener;
+package net.digiex.featurepack.listener;
 
 import java.util.Map.Entry;
 
@@ -10,13 +10,13 @@ import org.getspout.spoutapi.event.input.KeyPressedEvent;
 import org.getspout.spoutapi.keyboard.Keyboard;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
-import net.digiex.FeaturePack.FPPermissions;
-import net.digiex.FeaturePack.FPSettings;
-import net.digiex.FeaturePack.FPSpout;
-import net.digiex.FeaturePack.FeaturePack;
-import net.digiex.FeaturePack.command.KillVoteCommand;
-import net.digiex.FeaturePack.command.TimeVoteCommand;
-import net.digiex.FeaturePack.command.WeatherVoteCommand;
+import net.digiex.featurepack.FPPermissions;
+import net.digiex.featurepack.FPSettings;
+import net.digiex.featurepack.FPSpout;
+import net.digiex.featurepack.FeaturePack;
+import net.digiex.featurepack.command.KillVoteCommand;
+import net.digiex.featurepack.command.TimeVoteCommand;
+import net.digiex.featurepack.command.WeatherVoteCommand;
 
 public class FPCustomListener extends InputListener {
 	@SuppressWarnings("unused")

@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.payment.methods;
+package net.digiex.featurepack.payment.methods;
 
 import com.iConomy.iConomy;
 import com.iConomy.system.Account;
@@ -6,7 +6,7 @@ import com.iConomy.system.BankAccount;
 import com.iConomy.system.Holdings;
 import com.iConomy.util.Constants;
 
-import net.digiex.FeaturePack.payment.Method;
+import net.digiex.featurepack.payment.Method;
 
 import org.bukkit.plugin.Plugin;
 

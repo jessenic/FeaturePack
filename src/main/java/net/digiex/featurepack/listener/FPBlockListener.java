@@ -1,13 +1,13 @@
-package net.digiex.FeaturePack.listener;
+package net.digiex.featurepack.listener;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockListener;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-import net.digiex.FeaturePack.FPSettings;
-import net.digiex.FeaturePack.FeaturePack;
-import net.digiex.FeaturePack.command.SecureCommand;
+import net.digiex.featurepack.FPSettings;
+import net.digiex.featurepack.FeaturePack;
+import net.digiex.featurepack.command.SecureCommand;
 
 public class FPBlockListener extends BlockListener {
 	@SuppressWarnings("unused")

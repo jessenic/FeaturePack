@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.command;
+package net.digiex.featurepack.command;
 
 import java.util.Random;
 
@@ -8,11 +8,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import net.digiex.FeaturePack.FPPermissions;
-import net.digiex.FeaturePack.FPSettings;
-import net.digiex.FeaturePack.FPUtils;
-import net.digiex.FeaturePack.FeaturePack;
-import net.digiex.FeaturePack.payment.Method.MethodAccount;
+import net.digiex.featurepack.FPPermissions;
+import net.digiex.featurepack.FPSettings;
+import net.digiex.featurepack.FPUtils;
+import net.digiex.featurepack.FeaturePack;
+import net.digiex.featurepack.payment.Method.MethodAccount;
 
 public class LottoCommand implements CommandExecutor {
 	private FeaturePack parent;

@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.thread;
+package net.digiex.featurepack.thread;
 
 import org.anjocaido.groupmanager.GroupManager;
 import org.anjocaido.groupmanager.data.Group;
@@ -10,10 +10,10 @@ import org.bukkit.plugin.Plugin;
 import com.nijiko.permissions.PermissionHandler;
 import com.nijikokun.bukkit.Permissions.Permissions;
 
-import net.digiex.FeaturePack.FPPermissions;
-import net.digiex.FeaturePack.FPPermissions.HandlerType;
-import net.digiex.FeaturePack.FPSettings;
-import net.digiex.FeaturePack.FeaturePack;
+import net.digiex.featurepack.FPPermissions;
+import net.digiex.featurepack.FPPermissions.HandlerType;
+import net.digiex.featurepack.FPSettings;
+import net.digiex.featurepack.FeaturePack;
 
 public class FPIPv6 implements Runnable {
 	public boolean interrupted = false;

@@ -1,6 +1,6 @@
-package net.digiex.FeaturePack;
+package net.digiex.featurepack;
 
-import net.digiex.FeaturePack.payment.Methods;
+import net.digiex.featurepack.payment.Methods;
 
 public class FPEconomy {
 	private FeaturePack parent;

@@ -1,11 +1,11 @@
-package net.digiex.FeaturePack.payment.methods;
+package net.digiex.featurepack.payment.methods;
 
 import com.earth2me.essentials.Essentials;
 import com.earth2me.essentials.api.Economy;
 import com.earth2me.essentials.api.NoLoanPermittedException;
 import com.earth2me.essentials.api.UserDoesNotExistException;
 
-import net.digiex.FeaturePack.payment.Method;
+import net.digiex.featurepack.payment.Method;
 
 import org.bukkit.plugin.Plugin;
 

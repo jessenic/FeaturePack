@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.payment;
+package net.digiex.featurepack.payment;
 
 import org.bukkit.plugin.Plugin;
 

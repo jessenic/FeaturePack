@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.command;
+package net.digiex.featurepack.command;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,10 +16,10 @@ import org.bukkit.entity.Monster;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Wolf;
 
-import net.digiex.FeaturePack.FPPermissions;
-import net.digiex.FeaturePack.FPSettings;
-import net.digiex.FeaturePack.FeaturePack;
-import net.digiex.FeaturePack.task.KillVoteTask;
+import net.digiex.featurepack.FPPermissions;
+import net.digiex.featurepack.FPSettings;
+import net.digiex.featurepack.FeaturePack;
+import net.digiex.featurepack.task.KillVoteTask;
 
 public class KillVoteCommand implements CommandExecutor {
 	public FeaturePack parent;

@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.task;
+package net.digiex.featurepack.task;
 
 import java.util.Iterator;
 import java.util.List;

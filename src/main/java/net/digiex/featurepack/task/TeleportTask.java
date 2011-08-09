@@ -1,9 +1,9 @@
-package net.digiex.FeaturePack.task;
+package net.digiex.featurepack.task;
 
 import org.bukkit.entity.Player;
 
-import net.digiex.FeaturePack.FeaturePack;
-import net.digiex.FeaturePack.command.GodCommand;
+import net.digiex.featurepack.FeaturePack;
+import net.digiex.featurepack.command.GodCommand;
 
 public class TeleportTask implements Runnable {
 	private Player player;

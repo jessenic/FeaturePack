@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.listener;
+package net.digiex.featurepack.listener;
 
 import org.bukkit.Chunk;
 import org.bukkit.World;
@@ -18,19 +18,19 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.util.Vector;
 
-import net.digiex.FeaturePack.FPPermissions;
-import net.digiex.FeaturePack.FPSettings;
-import net.digiex.FeaturePack.FPUtils;
-import net.digiex.FeaturePack.FeaturePack;
-import net.digiex.FeaturePack.command.GodCommand;
-import net.digiex.FeaturePack.command.KillVoteCommand;
-import net.digiex.FeaturePack.command.RegenCommand;
-import net.digiex.FeaturePack.command.SecureCommand;
-import net.digiex.FeaturePack.command.TimeVoteCommand;
-import net.digiex.FeaturePack.command.TimeVoteCommand.VoteTypes;
-import net.digiex.FeaturePack.command.VoteCommand;
-import net.digiex.FeaturePack.command.WeatherVoteCommand;
-import net.digiex.FeaturePack.task.TeleportTask;
+import net.digiex.featurepack.FPPermissions;
+import net.digiex.featurepack.FPSettings;
+import net.digiex.featurepack.FPUtils;
+import net.digiex.featurepack.FeaturePack;
+import net.digiex.featurepack.command.GodCommand;
+import net.digiex.featurepack.command.KillVoteCommand;
+import net.digiex.featurepack.command.RegenCommand;
+import net.digiex.featurepack.command.SecureCommand;
+import net.digiex.featurepack.command.TimeVoteCommand;
+import net.digiex.featurepack.command.TimeVoteCommand.VoteTypes;
+import net.digiex.featurepack.command.VoteCommand;
+import net.digiex.featurepack.command.WeatherVoteCommand;
+import net.digiex.featurepack.task.TeleportTask;
 
 public class FPPlayerListener extends PlayerListener {
 	private FeaturePack parent;

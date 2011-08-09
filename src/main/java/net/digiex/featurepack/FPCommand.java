@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack;
+package net.digiex.featurepack;
 
 import java.util.HashMap;
 
@@ -7,33 +7,33 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import net.digiex.FeaturePack.command.BiomeCommand;
-import net.digiex.FeaturePack.command.DawnCommand;
-import net.digiex.FeaturePack.command.DayCommand;
-import net.digiex.FeaturePack.command.DuskCommand;
-import net.digiex.FeaturePack.command.GodCommand;
-import net.digiex.FeaturePack.command.HelpCommand;
-import net.digiex.FeaturePack.command.IPv6Command;
-import net.digiex.FeaturePack.command.InfoCommand;
-import net.digiex.FeaturePack.command.KillVoteCommand;
-import net.digiex.FeaturePack.command.LightningCommand;
-import net.digiex.FeaturePack.command.LockCommand;
-import net.digiex.FeaturePack.command.LottoCommand;
-import net.digiex.FeaturePack.command.MyTimeCommand;
-import net.digiex.FeaturePack.command.NightCommand;
-import net.digiex.FeaturePack.command.RainCommand;
-import net.digiex.FeaturePack.command.RegenCommand;
-import net.digiex.FeaturePack.command.ReloadCommand;
-import net.digiex.FeaturePack.command.SecureCommand;
-import net.digiex.FeaturePack.command.SeedCommand;
-import net.digiex.FeaturePack.command.SunCommand;
-import net.digiex.FeaturePack.command.ThunderCommand;
-import net.digiex.FeaturePack.command.TimeVoteCommand;
-import net.digiex.FeaturePack.command.UngodCommand;
-import net.digiex.FeaturePack.command.UnlockCommand;
-import net.digiex.FeaturePack.command.VersionCommand;
-import net.digiex.FeaturePack.command.VoteCommand;
-import net.digiex.FeaturePack.command.WeatherVoteCommand;
+import net.digiex.featurepack.command.BiomeCommand;
+import net.digiex.featurepack.command.DawnCommand;
+import net.digiex.featurepack.command.DayCommand;
+import net.digiex.featurepack.command.DuskCommand;
+import net.digiex.featurepack.command.GodCommand;
+import net.digiex.featurepack.command.HelpCommand;
+import net.digiex.featurepack.command.IPv6Command;
+import net.digiex.featurepack.command.InfoCommand;
+import net.digiex.featurepack.command.KillVoteCommand;
+import net.digiex.featurepack.command.LightningCommand;
+import net.digiex.featurepack.command.LockCommand;
+import net.digiex.featurepack.command.LottoCommand;
+import net.digiex.featurepack.command.MyTimeCommand;
+import net.digiex.featurepack.command.NightCommand;
+import net.digiex.featurepack.command.RainCommand;
+import net.digiex.featurepack.command.RegenCommand;
+import net.digiex.featurepack.command.ReloadCommand;
+import net.digiex.featurepack.command.SecureCommand;
+import net.digiex.featurepack.command.SeedCommand;
+import net.digiex.featurepack.command.SunCommand;
+import net.digiex.featurepack.command.ThunderCommand;
+import net.digiex.featurepack.command.TimeVoteCommand;
+import net.digiex.featurepack.command.UngodCommand;
+import net.digiex.featurepack.command.UnlockCommand;
+import net.digiex.featurepack.command.VersionCommand;
+import net.digiex.featurepack.command.VoteCommand;
+import net.digiex.featurepack.command.WeatherVoteCommand;
 
 public class FPCommand implements CommandExecutor {
 	private HashMap<String, CommandExecutor> Executors = new HashMap<String, CommandExecutor>();

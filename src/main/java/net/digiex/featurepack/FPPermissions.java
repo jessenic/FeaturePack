@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack;
+package net.digiex.featurepack;
 
 import org.anjocaido.groupmanager.GroupManager;
 import org.bukkit.entity.Player;

@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack;
+package net.digiex.featurepack;
 
 import java.io.File;
 import java.util.List;

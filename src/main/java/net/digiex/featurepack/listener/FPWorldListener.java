@@ -1,10 +1,10 @@
-package net.digiex.FeaturePack.listener;
+package net.digiex.featurepack.listener;
 
 import org.bukkit.event.world.WorldListener;
 import org.bukkit.event.world.WorldLoadEvent;
 
-import net.digiex.FeaturePack.FPUtils;
-import net.digiex.FeaturePack.FeaturePack;
+import net.digiex.featurepack.FPUtils;
+import net.digiex.featurepack.FeaturePack;
 
 public class FPWorldListener extends WorldListener {
 	private FeaturePack parent;

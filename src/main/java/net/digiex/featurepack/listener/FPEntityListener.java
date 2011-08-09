@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.listener;
+package net.digiex.featurepack.listener;
 
 import java.util.Iterator;
 
@@ -40,9 +40,9 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntityListener;
 import org.bukkit.inventory.ItemStack;
 
-import net.digiex.FeaturePack.FPSettings;
-import net.digiex.FeaturePack.FeaturePack;
-import net.digiex.FeaturePack.command.GodCommand;
+import net.digiex.featurepack.FPSettings;
+import net.digiex.featurepack.FeaturePack;
+import net.digiex.featurepack.command.GodCommand;
 
 public class FPEntityListener extends EntityListener {
 	private FeaturePack parent;

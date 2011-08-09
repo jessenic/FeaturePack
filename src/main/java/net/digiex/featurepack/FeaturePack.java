@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack;
+package net.digiex.featurepack;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,13 +14,13 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import net.digiex.FeaturePack.command.LockCommand;
-import net.digiex.FeaturePack.command.LottoCommand;
-import net.digiex.FeaturePack.payment.Method;
-import net.digiex.FeaturePack.task.TimeLockTask;
-import net.digiex.FeaturePack.task.TipSetTask;
-import net.digiex.FeaturePack.task.WeatherLockTask;
-import net.digiex.FeaturePack.thread.FPIPv6;
+import net.digiex.featurepack.command.LockCommand;
+import net.digiex.featurepack.command.LottoCommand;
+import net.digiex.featurepack.payment.Method;
+import net.digiex.featurepack.task.TimeLockTask;
+import net.digiex.featurepack.task.TipSetTask;
+import net.digiex.featurepack.task.WeatherLockTask;
+import net.digiex.featurepack.thread.FPIPv6;
 
 public class FeaturePack extends JavaPlugin {
 	private Random rng;

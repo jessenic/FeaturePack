@@ -1,4 +1,4 @@
-package net.digiex.FeaturePack.payment;
+package net.digiex.featurepack.payment;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -63,13 +63,13 @@ public class Methods {
      * @see #Methods(java.lang.String)
      */
     private void _init() {
-        this.addMethod("iConomy", new net.digiex.FeaturePack.payment.methods.iCo6());
-        this.addMethod("iConomy", new net.digiex.FeaturePack.payment.methods.iCo5());
-        this.addMethod("iConomy", new net.digiex.FeaturePack.payment.methods.iCo4());
-        this.addMethod("BOSEconomy", new net.digiex.FeaturePack.payment.methods.BOSE6());
-        this.addMethod("BOSEconomy", new net.digiex.FeaturePack.payment.methods.BOSE7());
-        this.addMethod("Essentials", new net.digiex.FeaturePack.payment.methods.EE17());
-        this.addMethod("MultiCurrency", new net.digiex.FeaturePack.payment.methods.MCUR());
+        this.addMethod("iConomy", new net.digiex.featurepack.payment.methods.iCo6());
+        this.addMethod("iConomy", new net.digiex.featurepack.payment.methods.iCo5());
+        this.addMethod("iConomy", new net.digiex.featurepack.payment.methods.iCo4());
+        this.addMethod("BOSEconomy", new net.digiex.featurepack.payment.methods.BOSE6());
+        this.addMethod("BOSEconomy", new net.digiex.featurepack.payment.methods.BOSE7());
+        this.addMethod("Essentials", new net.digiex.featurepack.payment.methods.EE17());
+        this.addMethod("MultiCurrency", new net.digiex.featurepack.payment.methods.MCUR());
     }
 
     /**
